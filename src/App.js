@@ -12,7 +12,7 @@ function App() {
     <HashRouter>
       <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
         <div className="container">
-          <a className="navbar-brand">React with Redux</a>
+          <Link className="navbar-brand">React with Redux</Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -46,9 +46,9 @@ function App() {
       </Routes>
 
       <p>This is a sample text inside new_branch
-        <img src={Apple}  style={{ width:"200px", height:"200px" }}/>
+        <img src={Apple}  style={{ width:"200px", height:"200px" }} alt="apple"/>
       </p>
-        <img src={require('./apple.png')}/> 
+        <img src={require('./apple.png')} alt="apple"/> 
 
     </HashRouter>
   );
