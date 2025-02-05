@@ -1,24 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { HashRouter, Routes, Route, Link } from "react-router-dom";
+import Mydashboard from "./dashboard";
+import Myapi from "./api";
+import Myproduct from "./product";
+import Myuser from "./user";
+import Mybook from "./book";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <HashRouter>
+      <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div className="container">
+          <a className="navbar-brand">React with Redux</a>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="mynavbar">
+            <ul className="navbar-nav ms-auto">
+              <li className="nav-item me-4">
+                <Link className="nav-link active" to="/"> Dashboard </Link>
+              </li>
+              <li className="nav-item me-4">
+                <Link className="nav-link active" to="/api"> Manage API </Link>
+              </li>
+              <li className="nav-item me-4">
+                <Link className="nav-link active" to="/product"> Manage Product </Link>
+              </li>
+              <li className="nav-item me-4">
+                <Link className="nav-link active" to="/user"> Manage User </Link>
+              </li>
+              <li className="nav-item me-4">
+                <Link className="nav-link active" to="/book"> Manage Book </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <Routes>
+        <Route exact path="/" element={<Mydashboard />} />
+        <Route exact path="/product" element={<Myproduct />} />
+        <Route exact path="/api" element={<Myapi />} />
+        <Route exact path="/user" element={<Myuser />} />
+        <Route exact path="/book" element={<Mybook />} />
+      </Routes>
+
+    </HashRouter>
   );
 }
 

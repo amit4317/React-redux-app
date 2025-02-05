@@ -1,13 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import App from './App'; ////app comes from react
+import Mystore from './store'; //mystore comes from redux
+import { Provider } from 'react-redux'; //Provider comsing from react redux
+
 import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.bundle.js'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={Mystore}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 
