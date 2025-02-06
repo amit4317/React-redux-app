@@ -1,6 +1,4 @@
 import { HashRouter, Routes, Route, Link } from "react-router-dom";
-import Apple from './apple.png'
-
 import Mydashboard from "./dashboard";
 import Myapi from "./api";
 import Myproduct from "./product";
@@ -44,12 +42,6 @@ function App() {
         <Route exact path="/user" element={<Myuser />} />
         <Route exact path="/book" element={<Mybook />} />
       </Routes>
-
-      <p>This is a sample text inside new_branch
-        <img src={Apple}  style={{ width:"200px", height:"200px" }} alt="apple"/>
-      </p>
-        <img src={require('./apple.png')} alt="apple"/> 
-
     </HashRouter>
   );
 }
